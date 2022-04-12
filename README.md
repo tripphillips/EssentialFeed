@@ -1,3 +1,4 @@
+![essentialfeedarchitecture](https://user-images.githubusercontent.com/12879016/163031805-4697365a-9ae3-4a3a-b4c4-5f933d224c57.png)
 # Essential App Case Study
 
 ![](https://github.com/essentialdevelopercom/essential-feed-case-study/workflows/CI-iOS/badge.svg) ![](https://github.com/essentialdevelopercom/essential-feed-case-study/workflows/CI-macOS/badge.svg) ![](https://github.com/essentialdevelopercom/essential-feed-case-study/workflows/Deploy/badge.svg)
@@ -338,4 +339,5 @@ GET /image/{image-id}/comments
 
 ## App Architecture
 
-![](architecture.png)
+![essentialfeedarchitecture](https://user-images.githubusercontent.com/12879016/163031826-d26637e5-e65d-4627-881c-03ab11294c7f.png)
+
