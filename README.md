@@ -1,5 +1,4 @@
-![essentialfeedarchitecture](https://user-images.githubusercontent.com/12879016/163031805-4697365a-9ae3-4a3a-b4c4-5f933d224c57.png)
-# Essential App Case Study
+# Essential App Case Study - The first project in the Essential Developer Course
 
 ![](https://github.com/essentialdevelopercom/essential-feed-case-study/workflows/CI-iOS/badge.svg) ![](https://github.com/essentialdevelopercom/essential-feed-case-study/workflows/CI-macOS/badge.svg) ![](https://github.com/essentialdevelopercom/essential-feed-case-study/workflows/Deploy/badge.svg)
 
