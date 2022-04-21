@@ -54,6 +54,10 @@ public final class RemoteFeedLoader {
 
 private class FeedItemsMapper {
     
+    private enum Constants {
+        static let okStatusCode: Int = 200
+    }
+    
     private struct Root: Decodable {
         let items: [Item]
     }
@@ -75,7 +79,7 @@ private class FeedItemsMapper {
     static let decoder = JSONDecoder()
     
     static func map(_ data: Data, _ response: HTTPURLResponse) throws -> [FeedItem] {
-        guard response.statusCode == 200 else {
+        guard response.statusCode == Constants.okStatusCode else {
             throw RemoteFeedLoader.Error.invalidData
         }
         
