@@ -7,7 +7,7 @@
 
 import Foundation
 
-internal class FeedItemsMapper {
+internal final class FeedItemsMapper {
     
     private enum Constants {
         static let okStatusCode: Int = 200
@@ -33,7 +33,7 @@ internal class FeedItemsMapper {
     
     static let decoder = JSONDecoder()
     
-    static func map(_ data: Data, _ response: HTTPURLResponse) throws -> [FeedItem] {
+    internal static func map(_ data: Data, _ response: HTTPURLResponse) throws -> [FeedItem] {
         guard response.statusCode == Constants.okStatusCode else {
             throw RemoteFeedLoader.Error.invalidData
         }
