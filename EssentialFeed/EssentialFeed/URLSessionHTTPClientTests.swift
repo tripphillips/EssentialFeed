@@ -31,6 +31,8 @@ class URLSessionHTTPClientTests: XCTestCase {
         XCTAssertEqual(session.receivedURLs, [url])
     }
     
+    // MARK: - Helpers
+    
     private class URLSessionSpy: URLSession {
         var receivedURLs = [URL]()
         
