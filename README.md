@@ -1,6 +1,6 @@
 # Essential App Case Study - The first project in the Essential Developer Course
 
-![](https://github.com/essentialdevelopercom/essential-feed-case-study/workflows/CI-iOS/badge.svg) ![](https://github.com/essentialdevelopercom/essential-feed-case-study/workflows/CI-macOS/badge.svg) ![](https://github.com/essentialdevelopercom/essential-feed-case-study/workflows/Deploy/badge.svg)
+[![Build Status](https://app.travis-ci.com/tripphillips/EssentialFeed.svg?branch=master)](https://app.travis-ci.com/tripphillips/EssentialFeed)
 
 ## Image Feed Feature Specs
 
