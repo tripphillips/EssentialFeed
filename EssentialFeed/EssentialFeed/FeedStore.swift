@@ -7,9 +7,19 @@
 
 import Foundation
 
+public struct CachedFeed {
+    public let feed: [LocalFeedImage]
+    public let timestamp: Date
+    
+    public init(feed: [LocalFeedImage], timestamp: Date) {
+        self.feed = feed
+        self.timestamp = timestamp
+    }
+}
+
 public enum RetrieveCachedFeedResult {
     case empty
-    case found(feed: [LocalFeedImage], timestamp: Date)
+    case found(CachedFeed)
     case failure(Error)
 }
 
