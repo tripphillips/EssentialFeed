@@ -7,27 +7,18 @@
 
 import Foundation
 
-public struct CachedFeed {
-    public let feed: [LocalFeedImage]
-    public let timestamp: Date
-    
-    public init(feed: [LocalFeedImage], timestamp: Date) {
-        self.feed = feed
-        self.timestamp = timestamp
-    }
-}
-
-public enum RetrieveCachedFeedResult {
-    case empty
-    case found(CachedFeed)
-    case failure(Error)
-}
+public typealias CachedFeed = (feed: [LocalFeedImage], timestamp: Date) 
 
 public protocol FeedStore {
-    typealias DeletionCompletion = (Error?) -> ()
-    typealias InsertionCompletion = (Error?) -> ()
-    typealias RetreivalCompletion = (RetrieveCachedFeedResult) -> ()
+    typealias DeletionResult = Result<Void, Error>
+    typealias DeletionCompletion = (DeletionResult) -> ()
     
+    typealias InsertionResult = Result<Void, Error>
+    typealias InsertionCompletion = (InsertionResult) -> ()
+    
+    typealias RetrievalResult = Result<CachedFeed?, Error>
+    typealias RetrievalCompletion = (RetrievalResult) -> ()
+
     /// The completion handler can be invoked in any thread.
     /// Clients are responsible to dispatch to appropriate threads, if needed.
     func deleteCachedFeed(completion: @escaping DeletionCompletion)
@@ -38,5 +29,5 @@ public protocol FeedStore {
     
     /// The completion handler can be invoked in any thread.
     /// Clients are responsible to dispatch to appropriate threads, if needed.
-    func retrieve(completion: @escaping RetreivalCompletion)
+    func retrieve(completion: @escaping RetrievalCompletion)
 }
