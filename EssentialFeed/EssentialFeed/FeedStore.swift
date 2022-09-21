@@ -12,13 +12,13 @@ public enum CachedFeed {
     case found(feed: [LocalFeedImage], timestamp: Date)
 }
 
-public typealias RetrieveCachedFeedResult = Result<CachedFeed, Error>
-
 public protocol FeedStore {
     typealias DeletionCompletion = (Error?) -> ()
     typealias InsertionCompletion = (Error?) -> ()
-    typealias RetreivalCompletion = (RetrieveCachedFeedResult) -> ()
     
+    typealias RetrievalResult = Result<CachedFeed, Error>
+    typealias RetreivalCompletion = (RetrievalResult) -> ()
+
     /// The completion handler can be invoked in any thread.
     /// Clients are responsible to dispatch to appropriate threads, if needed.
     func deleteCachedFeed(completion: @escaping DeletionCompletion)
