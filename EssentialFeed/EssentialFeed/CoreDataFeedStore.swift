@@ -17,7 +17,7 @@ public final class CoreDataFeedStore: FeedStore {
         self.context = container.newBackgroundContext()
     }
 
-    public func retrieve(completion: @escaping RetreivalCompletion) {
+    public func retrieve(completion: @escaping RetrievalCompletion) {
         perform { context in
             do {
                 if let cache = try ManagedCache.find(in: context) {
