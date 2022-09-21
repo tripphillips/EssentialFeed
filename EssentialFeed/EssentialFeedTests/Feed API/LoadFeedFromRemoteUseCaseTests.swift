@@ -135,9 +135,7 @@ class LoadFeedFromRemoteUseCaseTests: XCTestCase {
             "description": description,
             "location": location,
             "image": imageURL.absoluteString
-        ].reduce(into: [String: Any]()) { accum, elem in
-            accum[elem.key] = elem.value
-        }.compactMapValues { $0 }
+        ].compactMapValues { $0 }
         
         return (item, json)
     }
