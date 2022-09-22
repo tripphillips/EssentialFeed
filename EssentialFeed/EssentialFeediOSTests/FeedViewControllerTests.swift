@@ -57,13 +57,13 @@ final class FeedViewControllerTests: XCTestCase {
         sut.loadViewIfNeeded()
         XCTAssertTrue(sut.isShowingLoadingIndicator)
         
-        loader.completeFeedLoading()
+        loader.completeFeedLoading(at: 0)
         XCTAssertFalse(sut.isShowingLoadingIndicator)
 
         sut.simulateUserInitiatedFeedReload()
         XCTAssertTrue(sut.isShowingLoadingIndicator)
 
-        loader.completeFeedLoading()
+        loader.completeFeedLoading(at: 1)
         XCTAssertFalse(sut.isShowingLoadingIndicator)
     }
 
@@ -89,8 +89,8 @@ final class FeedViewControllerTests: XCTestCase {
             completions.append(completion)
         }
         
-        func completeFeedLoading() {
-            completions[0](.success([]))
+        func completeFeedLoading(at index: Int) {
+            completions[index](.success([]))
         }
     }
 }
