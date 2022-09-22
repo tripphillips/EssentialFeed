@@ -33,23 +33,16 @@
       <CodeCoverageTargets>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "0DB375442819FF0100C4B1A0"
-            BuildableName = "EssentialFeedAPIEndToEndTests.xctest"
-            BlueprintName = "EssentialFeedAPIEndToEndTests"
+            BlueprintIdentifier = "0D7DFA6128DBD7A50045B1C1"
+            BuildableName = "EssentialFeediOS.framework"
+            BlueprintName = "EssentialFeediOS"
             ReferencedContainer = "container:EssentialFeed.xcodeproj">
          </BuildableReference>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "0D19C1C82805FD0800117350"
-            BuildableName = "EssentialFeedTests.xctest"
-            BlueprintName = "EssentialFeedTests"
-            ReferencedContainer = "container:EssentialFeed.xcodeproj">
-         </BuildableReference>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "0D363B16286F25AF00DC6E47"
-            BuildableName = "EssentialFeedCacheIntegrationTests.xctest"
-            BlueprintName = "EssentialFeedCacheIntegrationTests"
+            BlueprintIdentifier = "0D19C1BE2805FD0800117350"
+            BuildableName = "EssentialFeed.framework"
+            BlueprintName = "EssentialFeed"
             ReferencedContainer = "container:EssentialFeed.xcodeproj">
          </BuildableReference>
       </CodeCoverageTargets>
