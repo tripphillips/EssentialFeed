@@ -403,7 +403,6 @@
 		0DF657192929AB1E007153BA /* Feed UI */ = {
 			isa = PBXGroup;
 			children = (
-				0DF657232929EF3C007153BA /* Models */,
 				0DF657202929B972007153BA /* Composers */,
 				0DF6571A2929AB2B007153BA /* Controllers */,
 				0DF6571B2929AB32007153BA /* Views */,
@@ -436,13 +435,6 @@
 				0DF657212929B98A007153BA /* FeedUIComposer.swift */,
 			);
 			path = Composers;
-			sourceTree = "<group>";
-		};
-		0DF657232929EF3C007153BA /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		0DF65728292AE627007153BA /* Feed Presentation */ = {
