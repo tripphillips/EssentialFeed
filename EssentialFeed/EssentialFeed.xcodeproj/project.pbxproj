@@ -337,7 +337,6 @@
 		0D7DFA6328DBD7A50045B1C1 /* EssentialFeediOS */ = {
 			isa = PBXGroup;
 			children = (
-				0DF657202929B972007153BA /* Composers */,
 				0DF657182929AB0D007153BA /* Feed Image Loader */,
 				0DF657192929AB1E007153BA /* Feed UI */,
 			);
@@ -392,7 +391,6 @@
 			isa = PBXGroup;
 			children = (
 				0DF657162929AAFD007153BA /* FeedImageDataLoader.swift */,
-				0DF6571E2929B607007153BA /* FeedImageCellController.swift */,
 			);
 			path = "Feed Image Loader";
 			sourceTree = "<group>";
@@ -400,6 +398,7 @@
 		0DF657192929AB1E007153BA /* Feed UI */ = {
 			isa = PBXGroup;
 			children = (
+				0DF657202929B972007153BA /* Composers */,
 				0DF6571A2929AB2B007153BA /* Controllers */,
 				0DF6571B2929AB32007153BA /* Views */,
 			);
@@ -409,6 +408,7 @@
 		0DF6571A2929AB2B007153BA /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				0DF6571E2929B607007153BA /* FeedImageCellController.swift */,
 				0D4CEE2A28DCE8C600170EE3 /* FeedViewController.swift */,
 				0DF6571C2929AE81007153BA /* FeedRefreshViewController.swift */,
 			);
