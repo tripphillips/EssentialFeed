@@ -59,6 +59,7 @@
 		0DF6571D2929AE81007153BA /* FeedRefreshViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF6571C2929AE81007153BA /* FeedRefreshViewController.swift */; };
 		0DF6571F2929B607007153BA /* FeedImageCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF6571E2929B607007153BA /* FeedImageCellController.swift */; };
 		0DF657222929B98A007153BA /* FeedUIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF657212929B98A007153BA /* FeedUIComposer.swift */; };
+		0DF657252929EF48007153BA /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF657242929EF48007153BA /* FeedViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -141,6 +142,7 @@
 		0DF6571C2929AE81007153BA /* FeedRefreshViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedRefreshViewController.swift; sourceTree = "<group>"; };
 		0DF6571E2929B607007153BA /* FeedImageCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageCellController.swift; sourceTree = "<group>"; };
 		0DF657212929B98A007153BA /* FeedUIComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedUIComposer.swift; sourceTree = "<group>"; };
+		0DF657242929EF48007153BA /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -398,6 +400,7 @@
 		0DF657192929AB1E007153BA /* Feed UI */ = {
 			isa = PBXGroup;
 			children = (
+				0DF657232929EF3C007153BA /* Models */,
 				0DF657202929B972007153BA /* Composers */,
 				0DF6571A2929AB2B007153BA /* Controllers */,
 				0DF6571B2929AB32007153BA /* Views */,
@@ -430,6 +433,14 @@
 				0DF657212929B98A007153BA /* FeedUIComposer.swift */,
 			);
 			path = Composers;
+			sourceTree = "<group>";
+		};
+		0DF657232929EF3C007153BA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0DF657242929EF48007153BA /* FeedViewModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -728,6 +739,7 @@
 				0D4CEE2B28DCE8C600170EE3 /* FeedViewController.swift in Sources */,
 				0DF6570E29202980007153BA /* FeedImageCell.swift in Sources */,
 				0DF6571F2929B607007153BA /* FeedImageCellController.swift in Sources */,
+				0DF657252929EF48007153BA /* FeedViewModel.swift in Sources */,
 				0DF657222929B98A007153BA /* FeedUIComposer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
