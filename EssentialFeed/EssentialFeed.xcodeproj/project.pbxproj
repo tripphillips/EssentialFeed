@@ -60,6 +60,7 @@
 		0DF6571F2929B607007153BA /* FeedImageCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF6571E2929B607007153BA /* FeedImageCellController.swift */; };
 		0DF657222929B98A007153BA /* FeedUIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF657212929B98A007153BA /* FeedUIComposer.swift */; };
 		0DF657252929EF48007153BA /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF657242929EF48007153BA /* FeedViewModel.swift */; };
+		0DF657272929F274007153BA /* FeedImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF657262929F274007153BA /* FeedImageViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -143,6 +144,7 @@
 		0DF6571E2929B607007153BA /* FeedImageCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageCellController.swift; sourceTree = "<group>"; };
 		0DF657212929B98A007153BA /* FeedUIComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedUIComposer.swift; sourceTree = "<group>"; };
 		0DF657242929EF48007153BA /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
+		0DF657262929F274007153BA /* FeedImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -439,6 +441,7 @@
 			isa = PBXGroup;
 			children = (
 				0DF657242929EF48007153BA /* FeedViewModel.swift */,
+				0DF657262929F274007153BA /* FeedImageViewModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -738,6 +741,7 @@
 				0DF657102920C4FB007153BA /* UIView+Shimmering.swift in Sources */,
 				0D4CEE2B28DCE8C600170EE3 /* FeedViewController.swift in Sources */,
 				0DF6570E29202980007153BA /* FeedImageCell.swift in Sources */,
+				0DF657272929F274007153BA /* FeedImageViewModel.swift in Sources */,
 				0DF6571F2929B607007153BA /* FeedImageCellController.swift in Sources */,
 				0DF657252929EF48007153BA /* FeedViewModel.swift in Sources */,
 				0DF657222929B98A007153BA /* FeedUIComposer.swift in Sources */,
