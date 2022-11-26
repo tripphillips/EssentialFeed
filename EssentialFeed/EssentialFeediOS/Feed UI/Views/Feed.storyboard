@@ -133,23 +133,18 @@
                         <connections>
                             <outlet property="dataSource" destination="aa3-go-qfV" id="tVh-4C-iBS"/>
                             <outlet property="delegate" destination="aa3-go-qfV" id="Sfy-uG-7eX"/>
+                            <outlet property="prefetchDataSource" destination="aa3-go-qfV" id="cBd-2m-1En"/>
                         </connections>
                     </tableView>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="QXf-rc-cg2">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <connections>
-                            <action selector="refresh" destination="Vjq-bQ-5fg" eventType="valueChanged" id="HRa-Fl-xA9"/>
-                            <action selector="refresh" destination="aa3-go-qfV" eventType="valueChanged" id="X76-vG-URl"/>
+                            <action selector="refresh" destination="aa3-go-qfV" eventType="valueChanged" id="1N0-jv-ah6"/>
                         </connections>
                     </refreshControl>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0zs-Cu-tV5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <customObject id="Vjq-bQ-5fg" customClass="FeedRefreshViewController" customModule="EssentialFeediOS" customModuleProvider="target">
-                    <connections>
-                        <outlet property="view" destination="QXf-rc-cg2" id="Vza-Dd-NfH"/>
-                    </connections>
-                </customObject>
             </objects>
             <point key="canvasLocation" x="890.76923076923072" y="21.327014218009477"/>
         </scene>
