@@ -140,11 +140,9 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <connections>
                             <action selector="refresh" destination="Vjq-bQ-5fg" eventType="valueChanged" id="HRa-Fl-xA9"/>
+                            <action selector="refresh" destination="aa3-go-qfV" eventType="valueChanged" id="X76-vG-URl"/>
                         </connections>
                     </refreshControl>
-                    <connections>
-                        <outlet property="refreshController" destination="Vjq-bQ-5fg" id="l3m-L9-M2f"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0zs-Cu-tV5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <customObject id="Vjq-bQ-5fg" customClass="FeedRefreshViewController" customModule="EssentialFeediOS" customModuleProvider="target">
