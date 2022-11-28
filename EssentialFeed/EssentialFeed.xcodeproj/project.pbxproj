@@ -64,6 +64,7 @@
 		0DB91C0D2933C89800560436 /* UIImage+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB91C0C2933C89800560436 /* UIImage+TestHelpers.swift */; };
 		0DB91C0F2933C8B700560436 /* UIRefreshControl+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB91C0E2933C8B700560436 /* UIRefreshControl+TestHelpers.swift */; };
 		0DB91C132934FAC600560436 /* Feed.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0DB91C122934FAC600560436 /* Feed.strings */; };
+		0DB91C152934FC1800560436 /* FeedViewController+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB91C142934FC1800560436 /* FeedViewController+Localization.swift */; };
 		0DCA34FE283495B700AC1720 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 0DCA34FD283495B700AC1720 /* README.md */; };
 		0DF6570E29202980007153BA /* FeedImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF6570D29202980007153BA /* FeedImageCell.swift */; };
 		0DF657102920C4FB007153BA /* UIView+Shimmering.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF6570F2920C4FB007153BA /* UIView+Shimmering.swift */; };
@@ -163,6 +164,7 @@
 		0DB91C0C2933C89800560436 /* UIImage+TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+TestHelpers.swift"; sourceTree = "<group>"; };
 		0DB91C0E2933C8B700560436 /* UIRefreshControl+TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIRefreshControl+TestHelpers.swift"; sourceTree = "<group>"; };
 		0DB91C122934FAC600560436 /* Feed.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Feed.strings; sourceTree = "<group>"; };
+		0DB91C142934FC1800560436 /* FeedViewController+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FeedViewController+Localization.swift"; sourceTree = "<group>"; };
 		0DCA34FD283495B700AC1720 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		0DF6570D29202980007153BA /* FeedImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageCell.swift; sourceTree = "<group>"; };
 		0DF6570F2920C4FB007153BA /* UIView+Shimmering.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Shimmering.swift"; sourceTree = "<group>"; };
@@ -450,6 +452,7 @@
 				0DB91C0A2933C88300560436 /* UIControl+TestHelpers.swift */,
 				0DB91C0C2933C89800560436 /* UIImage+TestHelpers.swift */,
 				0DB91C0E2933C8B700560436 /* UIRefreshControl+TestHelpers.swift */,
+				0DB91C142934FC1800560436 /* FeedViewController+Localization.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -834,6 +837,7 @@
 				0DB91C0D2933C89800560436 /* UIImage+TestHelpers.swift in Sources */,
 				0D7DFA7828DCD9640045B1C1 /* FeedViewControllerTests.swift in Sources */,
 				0DB91C0B2933C88300560436 /* UIControl+TestHelpers.swift in Sources */,
+				0DB91C152934FC1800560436 /* FeedViewController+Localization.swift in Sources */,
 				0DB91C012933C71A00560436 /* FeedImageCell+TestHelpers.swift in Sources */,
 				0DB91C092933C85900560436 /* UIButton+TestHelpers.swift in Sources */,
 				0DB91C072933C82500560436 /* FeedViewControllerTests+LoaderSpy.swift in Sources */,
