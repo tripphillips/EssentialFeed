@@ -63,8 +63,8 @@
 		0DB91C0B2933C88300560436 /* UIControl+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB91C0A2933C88300560436 /* UIControl+TestHelpers.swift */; };
 		0DB91C0D2933C89800560436 /* UIImage+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB91C0C2933C89800560436 /* UIImage+TestHelpers.swift */; };
 		0DB91C0F2933C8B700560436 /* UIRefreshControl+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB91C0E2933C8B700560436 /* UIRefreshControl+TestHelpers.swift */; };
-		0DB91C132934FAC600560436 /* Feed.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0DB91C122934FAC600560436 /* Feed.strings */; };
 		0DB91C152934FC1800560436 /* FeedViewController+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB91C142934FC1800560436 /* FeedViewController+Localization.swift */; };
+		0DB91C182934FD2C00560436 /* Feed.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0DB91C1A2934FD2C00560436 /* Feed.strings */; };
 		0DCA34FE283495B700AC1720 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 0DCA34FD283495B700AC1720 /* README.md */; };
 		0DF6570E29202980007153BA /* FeedImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF6570D29202980007153BA /* FeedImageCell.swift */; };
 		0DF657102920C4FB007153BA /* UIView+Shimmering.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF6570F2920C4FB007153BA /* UIView+Shimmering.swift */; };
@@ -163,8 +163,8 @@
 		0DB91C0A2933C88300560436 /* UIControl+TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl+TestHelpers.swift"; sourceTree = "<group>"; };
 		0DB91C0C2933C89800560436 /* UIImage+TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+TestHelpers.swift"; sourceTree = "<group>"; };
 		0DB91C0E2933C8B700560436 /* UIRefreshControl+TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIRefreshControl+TestHelpers.swift"; sourceTree = "<group>"; };
-		0DB91C122934FAC600560436 /* Feed.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Feed.strings; sourceTree = "<group>"; };
 		0DB91C142934FC1800560436 /* FeedViewController+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FeedViewController+Localization.swift"; sourceTree = "<group>"; };
+		0DB91C192934FD2C00560436 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Feed.strings; sourceTree = "<group>"; };
 		0DCA34FD283495B700AC1720 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		0DF6570D29202980007153BA /* FeedImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageCell.swift; sourceTree = "<group>"; };
 		0DF6570F2920C4FB007153BA /* UIView+Shimmering.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Shimmering.swift"; sourceTree = "<group>"; };
@@ -505,7 +505,7 @@
 				0DF65729292AE650007153BA /* FeedPresenter.swift */,
 				0DF6572F292AFD30007153BA /* FeedLoadingViewModel.swift */,
 				0DF6572D292AFCFB007153BA /* FeedViewModel.swift */,
-				0DB91C122934FAC600560436 /* Feed.strings */,
+				0DB91C1A2934FD2C00560436 /* Feed.strings */,
 			);
 			path = "Feed Presentation";
 			sourceTree = "<group>";
@@ -722,7 +722,7 @@
 			files = (
 				0D577DAA2930874400A36D45 /* FeedAssets.xcassets in Resources */,
 				0DF65732293085F3007153BA /* Feed.storyboard in Resources */,
-				0DB91C132934FAC600560436 /* Feed.strings in Resources */,
+				0DB91C182934FD2C00560436 /* Feed.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -870,6 +870,17 @@
 			targetProxy = 0DB3754A2819FF0100C4B1A0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		0DB91C1A2934FD2C00560436 /* Feed.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0DB91C192934FD2C00560436 /* en */,
+			);
+			name = Feed.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		0D19C1D12805FD0800117350 /* Debug */ = {
