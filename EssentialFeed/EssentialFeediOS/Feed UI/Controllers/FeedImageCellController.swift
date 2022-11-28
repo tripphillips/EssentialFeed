@@ -26,7 +26,8 @@ final class FeedImageCellController: FeedImageView {
         return cell!
     }
     
-    func preload() {
+    func preload(cell: UITableViewCell? = nil) {
+        self.cell = cell as? FeedImageCell
         delegate.didRequestImage()
     }
     
