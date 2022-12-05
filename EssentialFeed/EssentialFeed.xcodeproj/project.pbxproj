@@ -74,6 +74,7 @@
 		0DB91C41293DC92E00560436 /* FeedErrorVIewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB91C40293DC92E00560436 /* FeedErrorVIewModel.swift */; };
 		0DB91C43293DCADE00560436 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB91C42293DCADE00560436 /* ErrorView.swift */; };
 		0DB91C46293DCB0D00560436 /* UIRefreshControl+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB91C45293DCB0D00560436 /* UIRefreshControl+Helpers.swift */; };
+		0DB91C49293E4EA100560436 /* FeedPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB91C48293E4EA100560436 /* FeedPresenterTests.swift */; };
 		0DCA34FE283495B700AC1720 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 0DCA34FD283495B700AC1720 /* README.md */; };
 		0DF6570E29202980007153BA /* FeedImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF6570D29202980007153BA /* FeedImageCell.swift */; };
 		0DF657102920C4FB007153BA /* UIView+Shimmering.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF6570F2920C4FB007153BA /* UIView+Shimmering.swift */; };
@@ -185,6 +186,7 @@
 		0DB91C40293DC92E00560436 /* FeedErrorVIewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedErrorVIewModel.swift; sourceTree = "<group>"; };
 		0DB91C42293DCADE00560436 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		0DB91C45293DCB0D00560436 /* UIRefreshControl+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIRefreshControl+Helpers.swift"; sourceTree = "<group>"; };
+		0DB91C48293E4EA100560436 /* FeedPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPresenterTests.swift; sourceTree = "<group>"; };
 		0DCA34FD283495B700AC1720 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		0DF6570D29202980007153BA /* FeedImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageCell.swift; sourceTree = "<group>"; };
 		0DF6570F2920C4FB007153BA /* UIView+Shimmering.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Shimmering.swift"; sourceTree = "<group>"; };
@@ -303,6 +305,7 @@
 				0D1F8AA62818ABF600A59907 /* Helpers */,
 				0D677C3728353DAE005EAE6E /* Feed Cache */,
 				0DAC7D8228125C22005EEF5C /* Feed API */,
+				0DB91C47293E4D7E00560436 /* Feed Presentation */,
 			);
 			path = EssentialFeedTests;
 			sourceTree = "<group>";
@@ -405,7 +408,6 @@
 			children = (
 				0DB91C172934FCC600560436 /* FeedUI */,
 				0DB91C1F2934FFE600560436 /* Feed Presentation */,
-				0DB91C1D2934FE5300560436 /* FeedLocalizationTests.swift */,
 			);
 			path = EssentialFeediOSTests;
 			sourceTree = "<group>";
@@ -474,6 +476,7 @@
 		0DB91C1F2934FFE600560436 /* Feed Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				0DB91C1D2934FE5300560436 /* FeedLocalizationTests.swift */,
 			);
 			path = "Feed Presentation";
 			sourceTree = "<group>";
@@ -487,6 +490,14 @@
 				0DB91C45293DCB0D00560436 /* UIRefreshControl+Helpers.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		0DB91C47293E4D7E00560436 /* Feed Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				0DB91C48293E4EA100560436 /* FeedPresenterTests.swift */,
+			);
+			path = "Feed Presentation";
 			sourceTree = "<group>";
 		};
 		0DF657182929AB0D007153BA /* Feed Image Loader */ = {
@@ -819,6 +830,7 @@
 			files = (
 				0DA36657284178E60006A969 /* ValidateFeedCacheUseCaseTests.swift in Sources */,
 				0D363AF72869E4C700DC6E47 /* XCTestCase+FeedStoreSpecs.swift in Sources */,
+				0DB91C49293E4EA100560436 /* FeedPresenterTests.swift in Sources */,
 				0DAC7D30280E5EB8005EEF5C /* LoadFeedFromRemoteUseCaseTests.swift in Sources */,
 				0D363AFE2869EBB900DC6E47 /* XCTestCase+FailableInsertFeedStoreSpecs.swift in Sources */,
 				0D1F8AA82818AC2E00A59907 /* XCTestCase+MemoryLeakTracking.swift in Sources */,
