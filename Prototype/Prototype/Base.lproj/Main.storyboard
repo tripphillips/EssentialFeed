@@ -75,6 +75,9 @@
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vQG-Xk-cTI">
                                                             <rect key="frame" x="0.0" y="0.0" width="350" height="350"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="350" id="FHQ-It-38A"/>
+                                                            </constraints>
                                                         </imageView>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.8901960784313725" green="0.8901960784313725" blue="0.8901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -114,6 +117,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="descriptionLabel" destination="INx-Z3-nZC" id="Gnf-3f-m4u"/>
+                                    <outlet property="feedImageContainer" destination="Hml-9i-reb" id="5uc-VT-kQq"/>
                                     <outlet property="feedImageView" destination="vQG-Xk-cTI" id="Qbm-r1-uX8"/>
                                     <outlet property="locationContainer" destination="Uh5-SI-nmQ" id="MvQ-mM-dlf"/>
                                     <outlet property="locationLabel" destination="sTM-l8-oYQ" id="pYv-RA-Wre"/>
@@ -126,6 +130,12 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="My Feed" id="QOT-aj-NX8"/>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="rmm-IU-Gm0">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <connections>
+                            <action selector="refresh" destination="WJA-zO-61l" eventType="valueChanged" id="aVD-Pu-pRX"/>
+                        </connections>
+                    </refreshControl>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XwJ-4t-FF7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
