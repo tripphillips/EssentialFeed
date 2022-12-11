@@ -16,51 +16,13 @@
 		0DB91CA329464EB500560436 /* EssentialAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB91CA229464EB500560436 /* EssentialAppTests.swift */; };
 		0DB91CAD29464EB500560436 /* EssentialAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB91CAC29464EB500560436 /* EssentialAppUITests.swift */; };
 		0DB91CAF29464EB500560436 /* EssentialAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB91CAE29464EB500560436 /* EssentialAppUITestsLaunchTests.swift */; };
+		0DEBC7E1294698FA004CB1E8 /* EssentialFeediOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DEBC7E0294698FA004CB1E8 /* EssentialFeediOS.framework */; };
+		0DEBC7E2294698FA004CB1E8 /* EssentialFeediOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0DEBC7E0294698FA004CB1E8 /* EssentialFeediOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0DEBC7E529469901004CB1E8 /* EssentialFeed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DEBC7E429469901004CB1E8 /* EssentialFeed.framework */; };
+		0DEBC7E629469901004CB1E8 /* EssentialFeed.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0DEBC7E429469901004CB1E8 /* EssentialFeed.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		0D34141929465023008BBE6D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0D34141029465023008BBE6D /* EssentialFeed.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 0D19C1BF2805FD0800117350;
-			remoteInfo = EssentialFeed;
-		};
-		0D34141B29465023008BBE6D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0D34141029465023008BBE6D /* EssentialFeed.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 0D19C1C92805FD0800117350;
-			remoteInfo = EssentialFeedTests;
-		};
-		0D34141D29465023008BBE6D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0D34141029465023008BBE6D /* EssentialFeed.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 0DB375452819FF0100C4B1A0;
-			remoteInfo = EssentialFeedAPIEndToEndTests;
-		};
-		0D34141F29465023008BBE6D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0D34141029465023008BBE6D /* EssentialFeed.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 0D363B17286F25AF00DC6E47;
-			remoteInfo = EssentialFeedCacheIntegrationTests;
-		};
-		0D34142129465023008BBE6D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0D34141029465023008BBE6D /* EssentialFeed.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 0D7DFA6228DBD7A50045B1C1;
-			remoteInfo = EssentialFeediOS;
-		};
-		0D34142329465023008BBE6D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0D34141029465023008BBE6D /* EssentialFeed.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 0D7DFA6928DBD7A60045B1C1;
-			remoteInfo = EssentialFeediOSTests;
-		};
 		0DB91C9F29464EB500560436 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0DB91C8029464EB200560436 /* Project object */;
@@ -77,8 +39,22 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		0DEBC7E3294698FB004CB1E8 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				0DEBC7E2294698FA004CB1E8 /* EssentialFeediOS.framework in Embed Frameworks */,
+				0DEBC7E629469901004CB1E8 /* EssentialFeed.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		0D34141029465023008BBE6D /* EssentialFeed.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = EssentialFeed.xcodeproj; path = ../EssentialFeed.xcodeproj; sourceTree = "<group>"; };
 		0DB91C8829464EB200560436 /* EssentialApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EssentialApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DB91C8B29464EB200560436 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0DB91C8D29464EB200560436 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -92,6 +68,8 @@
 		0DB91CA829464EB500560436 /* EssentialAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EssentialAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DB91CAC29464EB500560436 /* EssentialAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EssentialAppUITests.swift; sourceTree = "<group>"; };
 		0DB91CAE29464EB500560436 /* EssentialAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EssentialAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		0DEBC7E0294698FA004CB1E8 /* EssentialFeediOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = EssentialFeediOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0DEBC7E429469901004CB1E8 /* EssentialFeed.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = EssentialFeed.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +77,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DEBC7E1294698FA004CB1E8 /* EssentialFeediOS.framework in Frameworks */,
+				0DEBC7E529469901004CB1E8 /* EssentialFeed.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,27 +99,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0D34141129465023008BBE6D /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				0D34141A29465023008BBE6D /* EssentialFeed.framework */,
-				0D34141C29465023008BBE6D /* EssentialFeedTests.xctest */,
-				0D34141E29465023008BBE6D /* EssentialFeedAPIEndToEndTests.xctest */,
-				0D34142029465023008BBE6D /* EssentialFeedCacheIntegrationTests.xctest */,
-				0D34142229465023008BBE6D /* EssentialFeediOS.framework */,
-				0D34142429465023008BBE6D /* EssentialFeediOSTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		0DB91C7F29464EB200560436 = {
 			isa = PBXGroup;
 			children = (
-				0D34141029465023008BBE6D /* EssentialFeed.xcodeproj */,
 				0DB91C8A29464EB200560436 /* EssentialApp */,
 				0DB91CA129464EB500560436 /* EssentialAppTests */,
 				0DB91CAB29464EB500560436 /* EssentialAppUITests */,
 				0DB91C8929464EB200560436 /* Products */,
+				0DEBC7DF294698FA004CB1E8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -184,6 +151,15 @@
 			path = EssentialAppUITests;
 			sourceTree = "<group>";
 		};
+		0DEBC7DF294698FA004CB1E8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0DEBC7E429469901004CB1E8 /* EssentialFeed.framework */,
+				0DEBC7E0294698FA004CB1E8 /* EssentialFeediOS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -194,6 +170,7 @@
 				0DB91C8429464EB200560436 /* Sources */,
 				0DB91C8529464EB200560436 /* Frameworks */,
 				0DB91C8629464EB200560436 /* Resources */,
+				0DEBC7E3294698FB004CB1E8 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -274,12 +251,6 @@
 			mainGroup = 0DB91C7F29464EB200560436;
 			productRefGroup = 0DB91C8929464EB200560436 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 0D34141129465023008BBE6D /* Products */;
-					ProjectRef = 0D34141029465023008BBE6D /* EssentialFeed.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				0DB91C8729464EB200560436 /* EssentialApp */,
@@ -288,51 +259,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		0D34141A29465023008BBE6D /* EssentialFeed.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = EssentialFeed.framework;
-			remoteRef = 0D34141929465023008BBE6D /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		0D34141C29465023008BBE6D /* EssentialFeedTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = EssentialFeedTests.xctest;
-			remoteRef = 0D34141B29465023008BBE6D /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		0D34141E29465023008BBE6D /* EssentialFeedAPIEndToEndTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = EssentialFeedAPIEndToEndTests.xctest;
-			remoteRef = 0D34141D29465023008BBE6D /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		0D34142029465023008BBE6D /* EssentialFeedCacheIntegrationTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = EssentialFeedCacheIntegrationTests.xctest;
-			remoteRef = 0D34141F29465023008BBE6D /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		0D34142229465023008BBE6D /* EssentialFeediOS.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = EssentialFeediOS.framework;
-			remoteRef = 0D34142129465023008BBE6D /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		0D34142429465023008BBE6D /* EssentialFeediOSTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = EssentialFeediOSTests.xctest;
-			remoteRef = 0D34142329465023008BBE6D /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		0DB91C8629464EB200560436 /* Resources */ = {
