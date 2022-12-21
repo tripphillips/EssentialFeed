@@ -26,6 +26,14 @@ class FeedSnapshotTests: XCTestCase {
         record(snapshot: sut.snapshot(), named: "FEED_WITH_CONTENT")
     }
     
+    func test_feedWithErrorMessage() {
+        let sut = makeSUT()
+        
+        sut.display(.error(message: "This is a\nmulti-line\nerror message"))
+        
+        record(snapshot: sut.snapshot(), named: "FEED_WITH_ERROR_MESSAGE")
+    }
+    
     // MARK: - Helpers
     
     private func makeSUT() -> FeedViewController {
@@ -43,7 +51,7 @@ class FeedSnapshotTests: XCTestCase {
     private func feedWithContent() -> [ImageStub] {
         return [
             ImageStub(
-                description: "This is an image of the color red. It is very vibrant color.",
+                description: "This is an image of the color red. It is a very vibrant color.",
                 location: "Denver",
                 image: UIImage.make(withColor: .red)
             ),
