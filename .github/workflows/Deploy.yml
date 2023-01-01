@@ -22,7 +22,7 @@ jobs:
       run: |
         gpg --quiet --batch --yes --decrypt --passphrase="${{ secrets.SECRET_KEY }}" --output .github/deployment/EssentialAppCaseStudy.mobileprovision .github/deployment/EssentialAppCaseStudy.mobileprovision.gpg
         mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
-        cp .github/deployment/profile.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/
+        cp .github/deployment/EssentialAppCaseStudy.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/
     - name: Install keychain certificate
       run: |
         gpg --quiet --batch --yes --decrypt --passphrase="${{ secrets.SECRET_KEY }}" --output .github/deployment/certificate.p12 .github/deployment/certificate.p12.gpg
