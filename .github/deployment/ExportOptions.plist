@@ -12,7 +12,7 @@
 		<string>EssentialAppCaseStudyDistribution</string>
 	</dict>
 	<key>signingCertificate</key>
-	<string>distribution_certificate</string>
+	<string>Apple Distribution: Jess Phillips</string>
 	<key>signingStyle</key>
 	<string>manual</string>
 	<key>stripSwiftSymbols</key>
