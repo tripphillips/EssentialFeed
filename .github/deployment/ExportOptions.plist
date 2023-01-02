@@ -12,7 +12,7 @@
 		<string>EssentialAppCaseStudyDistribution</string>
 	</dict>
 	<key>signingCertificate</key>
-	<string>Apple Distribution</string>
+	<string>distribution_certificate</string>
 	<key>signingStyle</key>
 	<string>manual</string>
 	<key>stripSwiftSymbols</key>
