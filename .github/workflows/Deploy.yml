@@ -20,9 +20,9 @@ jobs:
 
     - name: Install provisioning profile
       run: |
-        gpg --quiet --batch --yes --decrypt --passphrase="${{ secrets.SECRET_KEY }}" --output .github/deployment/EssentialAppCaseStudy.mobileprovision .github/deployment/EssentialAppCaseStudy.mobileprovision.gpg
+        gpg --quiet --batch --yes --decrypt --passphrase="${{ secrets.SECRET_KEY }}" --output .github/deployment/EssentialAppCaseStudyDistribution.mobileprovision .github/deployment/EssentialAppCaseStudyDistribution.mobileprovision.gpg
         mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
-        cp .github/deployment/EssentialAppCaseStudy.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/
+        cp .github/deployment/EssentialAppCaseStudyDistribution.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/
     - name: Install keychain certificate
       run: |
         gpg --quiet --batch --yes --decrypt --passphrase="${{ secrets.SECRET_KEY }}" --output .github/deployment/certificate.p12 .github/deployment/certificate.p12.gpg
