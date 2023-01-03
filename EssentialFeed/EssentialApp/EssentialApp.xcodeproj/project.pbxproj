@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D816B462964721D004BE506 /* CombineHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D816B452964721D004BE506 /* CombineHelpers.swift */; };
 		0DA70A4C29608ECF00B7517E /* UIWindowSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA70A4B29608ECF00B7517E /* UIWindowSpy.swift */; };
 		0DB91C8C29464EB200560436 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB91C8B29464EB200560436 /* AppDelegate.swift */; };
 		0DB91C8E29464EB200560436 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB91C8D29464EB200560436 /* SceneDelegate.swift */; };
@@ -67,6 +68,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0D816B452964721D004BE506 /* CombineHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineHelpers.swift; sourceTree = "<group>"; };
 		0DA70A4B29608ECF00B7517E /* UIWindowSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIWindowSpy.swift; sourceTree = "<group>"; };
 		0DB91C8829464EB200560436 /* EssentialApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EssentialApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DB91C8B29464EB200560436 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 				0DDAC2F4295203EC002DE969 /* FeedImageDataLoaderPresentationAdapter.swift */,
 				0DDAC2F5295203EC002DE969 /* FeedViewAdapter.swift */,
 				0DB91C8B29464EB200560436 /* AppDelegate.swift */,
+				0D816B452964721D004BE506 /* CombineHelpers.swift */,
 				0DB91C8D29464EB200560436 /* SceneDelegate.swift */,
 				0DB91C8F29464EB200560436 /* ViewController.swift */,
 				0DB91C9429464EB400560436 /* Assets.xcassets */,
@@ -305,6 +308,7 @@
 			files = (
 				0DDAC2FC295203EC002DE969 /* FeedViewAdapter.swift in Sources */,
 				0DDAC2F9295203EC002DE969 /* FeedLoaderPresentationAdapter.swift in Sources */,
+				0D816B462964721D004BE506 /* CombineHelpers.swift in Sources */,
 				0DB91C9029464EB200560436 /* ViewController.swift in Sources */,
 				0DDAC2F7295203EC002DE969 /* FeedUIComposer.swift in Sources */,
 				0DDAC2F8295203EC002DE969 /* FeedImageDataLoaderPresentationAdapter.swift in Sources */,
