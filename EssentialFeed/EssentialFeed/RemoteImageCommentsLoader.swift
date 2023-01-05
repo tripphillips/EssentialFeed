@@ -31,7 +31,7 @@ public final class RemoteImageCommentsLoader: FeedLoader {
             case .success((let data, let response)):
                 completion(RemoteImageCommentsLoader.map(data, from: response))
             case .failure(_):
-                completion(.failure(RemoteFeedLoader.Error.connectivity))
+                completion(.failure(RemoteImageCommentsLoader.Error.connectivity))
             }
         }
     }

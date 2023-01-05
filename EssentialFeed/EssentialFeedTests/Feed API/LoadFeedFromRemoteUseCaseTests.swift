@@ -44,7 +44,7 @@ class LoadFeedFromRemoteUseCaseTests: XCTestCase {
         }
     }
     
-    func test_load_deliversErrorOnClientErrorOnNon200HTTPResponse() {
+    func test_load_deliversErrorOnNon200HTTPResponse() {
         let (sut, client) = makeSUT()
         
         let sampleCodes = [199, 201, 300, 400, 500]
