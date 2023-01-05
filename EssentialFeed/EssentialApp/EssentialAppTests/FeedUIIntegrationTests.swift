@@ -9,7 +9,7 @@ import XCTest
 import UIKit
 import EssentialFeed
 import EssentialFeediOS
-import EssentialApp
+@testable import EssentialApp
 
 final class FeedUIIntegrationTests: XCTestCase {
     
@@ -72,7 +72,7 @@ final class FeedUIIntegrationTests: XCTestCase {
         assertThat(sut, isRendering: [image0, image1, image2, image3])
     }
     
-    func test_loadFeedCompletion_rendersSuccessfullyLoadedFeedAfterNonEmptyFeed() {
+    func test_loadFeedCompletion_rendersSuccessfullyLoadedEmptyFeedAfterNonEmptyFeed() {
         let image0 = makeImage()
         let image1 = makeImage()
         let (sut, loader) = makeSUT()
@@ -82,7 +82,7 @@ final class FeedUIIntegrationTests: XCTestCase {
         assertThat(sut, isRendering: [image0, image1])
         
         sut.simulateUserInitiatedFeedReload()
-        loader.completeFeedLoading(with: [], at: 0)
+        loader.completeFeedLoading(with: [], at: 1)
         assertThat(sut, isRendering: [])
     }
     
@@ -324,7 +324,7 @@ final class FeedUIIntegrationTests: XCTestCase {
     
     private func makeSUT(file: StaticString = #file, line: UInt = #line) -> (sut: FeedViewController, loader: LoaderSpy) {
         let loader = LoaderSpy()
-        let sut = FeedUIComposer.feedComposedWith(feedLoader: loader, imageLoader: loader)
+        let sut = FeedUIComposer.feedComposedWith(feedLoader: loader.loadPublisher, imageLoader: loader.loadImageDataPublisher)
         trackForMemoryLeaks(loader, file: file, line: line)
         trackForMemoryLeaks(sut, file: file, line: line)
         return (sut, loader)
