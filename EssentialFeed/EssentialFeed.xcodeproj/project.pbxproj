@@ -311,6 +311,7 @@
 		0D19C1C12805FD0800117350 /* EssentialFeed */ = {
 			isa = PBXGroup;
 			children = (
+				0DDFDC9C2968762F00A9A091 /* Image Comments API */,
 				0DDFDC97296874C900A9A091 /* Shared API */,
 				0DDFDC96296874BB00A9A091 /* Shared API Infra */,
 				0DDFDC9129686C4A00A9A091 /* ImageCommentsFeature */,
@@ -328,6 +329,7 @@
 				0D1F8AA62818ABF600A59907 /* Helpers */,
 				0DDFDC992968751700A9A091 /* Shared API */,
 				0DDFDC982968750D00A9A091 /* Shared API Infra */,
+				0DDFDC9D2968765500A9A091 /* Image Comments API */,
 				0D677C3728353DAE005EAE6E /* Feed Cache */,
 				0DAC7D8228125C22005EEF5C /* Feed API */,
 				0DB91C47293E4D7E00560436 /* Feed Presentation */,
@@ -460,8 +462,6 @@
 				0D677C3F2835F796005EAE6E /* RemoteFeedItem.swift */,
 				0DAC7D8028125391005EEF5C /* FeedItemsMapper.swift */,
 				0DB91C642945780600560436 /* RemoteFeedImageDataLoader.swift */,
-				0DDFDC8F296713E900A9A091 /* ImageCommentsMapper.swift */,
-				0DDFDC8D2967139300A9A091 /* RemoteImageCommentsLoader.swift */,
 			);
 			name = "Feed API";
 			sourceTree = "<group>";
@@ -471,7 +471,6 @@
 			children = (
 				0DAC7D2F280E5EB8005EEF5C /* LoadFeedFromRemoteUseCaseTests.swift */,
 				0DB91C71294582DE00560436 /* LoadFeedImageDataFromRemoteUseCaseTests.swift */,
-				0DDFDC8B296712AD00A9A091 /* LoadImageCommentsFromRemoteUseCaseTests.swift */,
 			);
 			path = "Feed API";
 			sourceTree = "<group>";
@@ -593,6 +592,23 @@
 				0DB91C6F2945829E00560436 /* URLProtocolStub.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		0DDFDC9C2968762F00A9A091 /* Image Comments API */ = {
+			isa = PBXGroup;
+			children = (
+				0DDFDC8D2967139300A9A091 /* RemoteImageCommentsLoader.swift */,
+				0DDFDC8F296713E900A9A091 /* ImageCommentsMapper.swift */,
+			);
+			name = "Image Comments API";
+			sourceTree = "<group>";
+		};
+		0DDFDC9D2968765500A9A091 /* Image Comments API */ = {
+			isa = PBXGroup;
+			children = (
+				0DDFDC8B296712AD00A9A091 /* LoadImageCommentsFromRemoteUseCaseTests.swift */,
+			);
+			path = "Image Comments API";
 			sourceTree = "<group>";
 		};
 		0DF657192929AB1E007153BA /* Feed UI */ = {
