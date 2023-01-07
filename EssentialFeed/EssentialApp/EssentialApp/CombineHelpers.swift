@@ -31,9 +31,9 @@ extension Publisher {
     }
 }
 
-// MARK: - FeedLoader
+// MARK: - LocalFeedLoader
 
-extension FeedLoader {
+extension LocalFeedLoader {
     typealias Publisher = AnyPublisher<[FeedImage], Error>
     
     func loadPublisher() -> Publisher {
