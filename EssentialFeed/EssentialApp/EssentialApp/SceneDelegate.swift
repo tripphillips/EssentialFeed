@@ -33,8 +33,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         LocalFeedLoader(store: store, currentDate: Date.init)
     }()
     
-    private lazy var remoteFeedLoader: RemoteFeedLoader = {
-        RemoteFeedLoader(url: remoteURL, client: httpClient)
+    private lazy var remoteFeedLoader: RemoteLoader = {
+        RemoteLoader(url: remoteURL, client: httpClient, mapper: FeedItemsMapper.map)
     }()
     
     convenience init(httpClient: HTTPClient, store: FeedStore & FeedImageDataStore) {
