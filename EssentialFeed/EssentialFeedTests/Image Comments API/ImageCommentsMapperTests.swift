@@ -8,49 +8,42 @@
 import XCTest
 @testable import EssentialFeed
 
-final class LoadImageCommentsFromRemoteUseCaseTests: XCTestCase {
+final class ImageCommentsMapperTests: XCTestCase {
 
-    func test_load_deliversErrorOnNon2xxHTTPResponse() {
-        let (sut, client) = makeSUT()
-        
+    func test_map_throwsErrorOnNon2xxHTTPResponse() throws {
+        let json = makeItemsJSON([])
         let sampleCodes = [199, 150, 300, 400, 500]
         
-        sampleCodes.enumerated().forEach { index, code in
-            expect(sut, toCompleteWith: self.failure(.invalidData)) {
-                let json = makeItemsJSON([])
-                client.complete(withStatusCode: code, data: json, at: index)
-            }
+        try sampleCodes.forEach { code in
+            XCTAssertThrowsError(
+                try FeedItemsMapper.map(json, from: HTTPURLResponse(statusCode: code))
+            )
         }
     }
     
-    func test_load_deliversErrorOn2xxHTTPResponseWithInvalidJSON() {
-        let (sut, client) = makeSUT()
-        
-        let sampleCodes = [200, 201, 250, 280, 299]
-        sampleCodes.enumerated().forEach { (index, code) in
-            expect(sut, toCompleteWith: self.failure(.invalidData)) {
-                let invalidJSON = Data(_:"invalid json".utf8)
-                client.complete(withStatusCode: code, data: invalidJSON, at: index)
-            }
-        }
-    }
-    
-    func test_load_deliversNoItemsOn2xxHTTPResponseWithEmptyJSONList() {
-        let (sut, client) = makeSUT()
-        
+    func test_map_throwsErrorOn2xxHTTPResponseWithInvalidJSON() throws {
+        let invalidJSON = Data(_:"invalid json".utf8)
         let sampleCodes = [200, 201, 250, 280, 299]
         
-        sampleCodes.enumerated().forEach { (index, code) in
-            expect(sut, toCompleteWith: .success([])) {
-                let emptyListJSON = makeItemsJSON([])
-                client.complete(withStatusCode: code, data: emptyListJSON, at: index)
-            }
+        try sampleCodes.forEach { code in
+            XCTAssertThrowsError(
+                try ImageCommentsMapper.map(invalidJSON, from: HTTPURLResponse(statusCode: code))
+            )
         }
     }
     
-    func test_load_deliversItemsOn2xxHTTPResponseWithJSONItems() {
-        let (sut, client) = makeSUT()
+    func test_map_deliversNoItemsOn2xxHTTPResponseWithEmptyJSONList() throws {
+        let emptyListJSON = makeItemsJSON([])
+        let sampleCodes = [200, 201, 250, 280, 299]
         
+        try sampleCodes.forEach { code in
+            let result = try ImageCommentsMapper.map(emptyListJSON, from: HTTPURLResponse(statusCode: code))
+            
+            XCTAssertEqual(result, [])
+        }
+    }
+    
+    func test_map_deliversItemsOn2xxHTTPResponseWithJSONItems() throws {
         let item1 = makeItem(
             id: UUID(),
             message: "a message",
@@ -63,30 +56,17 @@ final class LoadImageCommentsFromRemoteUseCaseTests: XCTestCase {
             createdAt: (Date(timeIntervalSince1970: 1577881882), "2020-01-01T12:31:22+00:00"),
             username: "another username")
         
-        let items = [item1, item2]
-        
+        let json = makeItemsJSON([item1.json, item2.json])
         let sampleCodes = [200, 201, 250, 280, 299]
         
-        
-        sampleCodes.enumerated().forEach { (index, code) in
-            expect(sut, toCompleteWith: .success(items.map { $0.model })) {
-                let json = makeItemsJSON(items.map { $0.json })
-                client.complete(withStatusCode: code, data: json, at: index)
-            }
+        try sampleCodes.forEach { code in
+            let result = try ImageCommentsMapper.map(json, from: HTTPURLResponse(statusCode: code))
+            
+            XCTAssertEqual(result, [item1.model, item2.model])
         }
     }
     
     // MARK: - Helpers
-    
-    private func makeSUT(url: URL = URL(string: "https://a-url.com")!,
-                         file: StaticString = #filePath,
-                         line: UInt = #line) -> (sut: RemoteImageCommentsLoader, client: HTTPClientSpy) {
-        let client = HTTPClientSpy()
-        let sut = RemoteImageCommentsLoader(url: url, client: client)
-        trackForMemoryLeaks(client)
-        trackForMemoryLeaks(sut)
-        return (sut, client)
-    }
     
     private func failure(_ error: RemoteImageCommentsLoader.Error) -> RemoteImageCommentsLoader.Result {
         return .failure(error)
@@ -108,30 +88,5 @@ final class LoadImageCommentsFromRemoteUseCaseTests: XCTestCase {
         ]
         
         return (item, json)
-    }
-    
-    private func expect(_ sut: RemoteImageCommentsLoader,
-                        toCompleteWith expectedResult: RemoteImageCommentsLoader.Result,
-                        when action: () -> Void,
-                        file: StaticString = #filePath,
-                        line: UInt = #line) {
-        
-        let exp = expectation(description: "Wait for load completion")
-        
-        sut.load { receivedResult in
-            switch (receivedResult, expectedResult) {
-            case let (.success(receivedItems), .success(expectedItems)):
-                XCTAssertEqual(receivedItems, expectedItems, file: file, line: line)
-            case let (.failure(receivedError as RemoteImageCommentsLoader.Error), .failure(expectedError as RemoteImageCommentsLoader.Error)):
-                XCTAssertEqual(receivedError, expectedError, file: file, line: line)
-            default: XCTFail("Expected result \(expectedResult) got \(receivedResult) instead", file: file, line: line)
-            }
-            
-            exp.fulfill()
-        }
-        
-        action()
-        
-        wait(for: [exp], timeout: 1.0)
     }
 }
