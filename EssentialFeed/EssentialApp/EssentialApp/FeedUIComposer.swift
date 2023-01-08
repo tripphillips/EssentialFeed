@@ -17,11 +17,12 @@ final class FeedUIComposer {
   
         let feedController = FeedViewController.makeWith(delegate: presentationAdapter, title: FeedPresenter.title)
         
-        presentationAdapter.presenter = FeedPresenter(
-            feedView: FeedViewAdapter(controller: feedController,
+        presentationAdapter.presenter = LoadResourcePresenter(
+            resourceView: FeedViewAdapter(controller: feedController,
                                       imageLoader: imageLoader),
             loadingView: WeakRefVirtualProxy(feedController),
-            errorView: WeakRefVirtualProxy(feedController))
+            errorView: WeakRefVirtualProxy(feedController),
+            mapper: FeedPresenter.map)
         
         return feedController
     }
