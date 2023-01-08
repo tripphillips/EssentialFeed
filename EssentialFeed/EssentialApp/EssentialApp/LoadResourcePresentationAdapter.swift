@@ -12,7 +12,7 @@ import EssentialFeediOS
 final class LoadResourcePresentationAdapter<Resource, View: ResourceView> {
     private let loader: () -> AnyPublisher<Resource, Error>
     private var cancellable: Cancellable?
-    var presenter: LoadResourcePresenter<Resource, FeedViewAdapter>?
+    var presenter: LoadResourcePresenter<Resource, View>?
     
     init(loader: @escaping () -> AnyPublisher<Resource, Error>) {
         self.loader = loader
@@ -37,5 +37,16 @@ final class LoadResourcePresentationAdapter<Resource, View: ResourceView> {
 extension LoadResourcePresentationAdapter: FeedViewControllerDelegate {
     func didRequestFeedRefresh() {
        loadResource()
+    }
+}
+
+extension LoadResourcePresentationAdapter: FeedImageCellControllerDelegate {
+    
+    func didRequestImage() {
+        loadResource()
+    }
+    
+    func didCancelImageRequest() {
+        cancellable?.cancel()
     }
 }
