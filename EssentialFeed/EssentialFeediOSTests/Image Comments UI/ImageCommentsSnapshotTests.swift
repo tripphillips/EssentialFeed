@@ -33,6 +33,10 @@ class ImageCommentsSnapshotTests: XCTestCase {
     }
 
     private func comments() -> [CellController] {
+        commentControllers().map { CellController($0) }
+    }
+    
+    private func commentControllers() -> [ImageCommentCellController] {
         return [
             ImageCommentCellController(
                 model: ImageCommentViewModel(message: "Today I wrote my first SwiftUI view.  It was really cool to see my code instantly compile and display in the preview.", date: "3 years ago", username: "HelloUser")),
