@@ -12,10 +12,13 @@ import EssentialFeediOS
 
 final class FeedUIComposer {
     private init() {}
+    
+    private typealias FeedPresentationAdapter = LoadResourcePresentationAdapter<[FeedImage], FeedViewAdapter>
+    
     static func feedComposedWith(feedLoader: @escaping () -> AnyPublisher<[FeedImage], Error>, imageLoader: @escaping (URL) -> FeedImageDataLoader.Publisher) -> ListViewController {
-        let presentationAdapter = LoadResourcePresentationAdapter<[FeedImage], FeedViewAdapter>(loader: feedLoader)
+        let presentationAdapter = FeedPresentationAdapter(loader: feedLoader)
   
-        let feedController = ListViewController.makeWith(delegate: presentationAdapter, title: FeedPresenter.title)
+        let feedController = makeFeedViewController(title: FeedPresenter.title)
         feedController.onRefresh = presentationAdapter.loadResource
         
         presentationAdapter.presenter = LoadResourcePresenter(
@@ -27,10 +30,8 @@ final class FeedUIComposer {
         
         return feedController
     }
-}
-
-private extension ListViewController {
-    static func makeWith(title: String) -> ListViewController {
+    
+    private static func makeFeedViewController(title: String) -> ListViewController {
         let bundle = Bundle(for: ListViewController.self)
         let storyboard = UIStoryboard(name: "Feed", bundle: bundle)
         let feedController = storyboard.instantiateInitialViewController() as! ListViewController
