@@ -9,7 +9,7 @@ import XCTest
 
 typealias LocalizedBundle = (bundle: Bundle, localization: String)
 
-func assertLocalizedKeyAndValuesExist(in presentationBundle: Bundle, _ table: String, file: StaticString = #file, line: UInt = #line) {
+func assertLocalizedKeyAndValuesExist(in presentationBundle: Bundle, _ table: String, file: StaticString = #filePath, line: UInt = #line) {
     let localizationBundles = allLocalizationBundles(in: presentationBundle, file: file, line: line)
     let localizedStringKeys = allLocalizedStringKeys(in: localizationBundles, table: table, file: file, line: line)
     
@@ -26,7 +26,7 @@ func assertLocalizedKeyAndValuesExist(in presentationBundle: Bundle, _ table: St
     }
 }
 
-func allLocalizationBundles(in bundle: Bundle, file: StaticString = #file, line: UInt = #line) -> [LocalizedBundle] {
+func allLocalizationBundles(in bundle: Bundle, file: StaticString = #filePath, line: UInt = #line) -> [LocalizedBundle] {
     return bundle.localizations.compactMap { localization in
         guard
             let path = bundle.path(forResource: localization, ofType: "lproj"),
@@ -40,7 +40,7 @@ func allLocalizationBundles(in bundle: Bundle, file: StaticString = #file, line:
     }
 }
 
-func allLocalizedStringKeys(in bundles: [LocalizedBundle], table: String, file: StaticString = #file, line: UInt = #line) -> Set<String> {
+func allLocalizedStringKeys(in bundles: [LocalizedBundle], table: String, file: StaticString = #filePath, line: UInt = #line) -> Set<String> {
     return bundles.reduce([]) { (acc, current) in
         guard
             let path = current.bundle.path(forResource: table, ofType: "strings"),
