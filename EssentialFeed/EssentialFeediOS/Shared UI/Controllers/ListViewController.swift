@@ -66,7 +66,7 @@ final public class ListViewController: UITableViewController, UITableViewDataSou
         refreshControl?.update(isRefreshing: viewModel.isLoading)
     }
     
-    public func display(_ viewModel: ResourceErrorViewModel) {
+    public func display(_ viewModel: ResourceErrorViewModel) { 
         errorView.message = viewModel.message
     }
     
@@ -74,7 +74,7 @@ final public class ListViewController: UITableViewController, UITableViewDataSou
         var snapshot = NSDiffableDataSourceSnapshot<Int, CellController>()
         snapshot.appendSections([0])
         snapshot.appendItems(cellControllers, toSection: 0)
-        dataSource.apply(snapshot)
+        dataSource.applySnapshotUsingReloadData(snapshot)
     }
     
     @IBAction private func refresh() {
