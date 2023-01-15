@@ -77,6 +77,11 @@ final public class ListViewController: UITableViewController, UITableViewDataSou
         dataSource.applySnapshotUsingReloadData(snapshot)
     }
     
+    public override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let delegate = cellController(at: indexPath)?.delegate
+        delegate?.tableView?(tableView, didSelectRowAt: indexPath)
+    }
+    
     @IBAction private func refresh() {
         onRefresh?()
     }
