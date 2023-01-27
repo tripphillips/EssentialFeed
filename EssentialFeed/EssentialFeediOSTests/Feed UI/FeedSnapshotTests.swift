@@ -51,7 +51,7 @@ final class FeedSnapshotTests: XCTestCase {
             ),
             ImageStub(
                 description: "This is an image of the color green. This color reminds me of green grass",
-                location: "Denver, CO",
+                location: "Boulder, CO",
                 image: UIImage.make(withColor: .green)
             )
         ]
@@ -66,7 +66,7 @@ final class FeedSnapshotTests: XCTestCase {
             ),
             ImageStub(
                 description: nil,
-                location: "Denver, CO",
+                location: "Boulder, CO",
                 image: nil
             )
         ]
