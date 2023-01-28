@@ -15,7 +15,7 @@ final public class ListViewController: UITableViewController, UITableViewDataSou
     public var onRefresh: (() -> Void)?
     
     private lazy var dataSource: UITableViewDiffableDataSource<Int, CellController> = {
-        .init(tableView: tableView) { (tableView, indexPath, controller) -> UITableViewCell? in
+        .init(tableView: tableView) { (tableView, indexPath, controller) in
             controller.dataSource.tableView(tableView, cellForRowAt: indexPath)
         }
     }()
@@ -62,6 +62,10 @@ final public class ListViewController: UITableViewController, UITableViewDataSou
         }
     }
     
+    @IBAction private func refresh() {
+        onRefresh?()
+    }
+    
     public func display(_ viewModel: ResourceLoadingViewModel) {
         refreshControl?.update(isRefreshing: viewModel.isLoading)
     }
@@ -70,20 +74,19 @@ final public class ListViewController: UITableViewController, UITableViewDataSou
         errorView.message = viewModel.message
     }
     
-    public func display(_ cellControllers: [CellController]) {
+    public func display(_ sections: [CellController]...) {
         var snapshot = NSDiffableDataSourceSnapshot<Int, CellController>()
-        snapshot.appendSections([0])
-        snapshot.appendItems(cellControllers, toSection: 0)
+        sections.enumerated().forEach { section, cellControllers in
+            snapshot.appendSections([section])
+            snapshot.appendItems(cellControllers, toSection: section)
+        }
+
         dataSource.apply(snapshot)
     }
     
     public override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let delegate = cellController(at: indexPath)?.delegate
         delegate?.tableView?(tableView, didSelectRowAt: indexPath)
-    }
-    
-    @IBAction private func refresh() {
-        onRefresh?()
     }
     
     public override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {

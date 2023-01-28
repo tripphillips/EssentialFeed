@@ -92,13 +92,13 @@ final class FeedSnapshotTests: XCTestCase {
     }
     
     private func feedWithLoadMoreIndicator() -> [CellController] {
-        let loadMore = LoadMoreCellController()
+        let loadMore = LoadMoreCellController(callback: {})
         loadMore.display(ResourceLoadingViewModel(isLoading: true))
         return feed(with: loadMore)
     }
     
     private func feedWithLoadMoreError() -> [CellController] {
-        let loadMore = LoadMoreCellController()
+        let loadMore = LoadMoreCellController(callback: {})
         loadMore.display(ResourceErrorViewModel(message: "This is a error multiline\nerror message"))
         return feed(with: loadMore)
     }
@@ -109,8 +109,8 @@ final class FeedSnapshotTests: XCTestCase {
         stub.controller = cellController
         
         return [
-            CellController(UUID(), dataSource: cellController),
-            CellController(UUID(), dataSource: loadMore)
+            CellController(id: UUID(), dataSource: cellController),
+            CellController(id: UUID(), dataSource: loadMore)
         ]
     }
 }
@@ -120,7 +120,7 @@ private extension ListViewController {
         let cells: [CellController] = stubs.map { stub in
             let cellController = FeedImageCellController(viewModel: stub.viewModel, delegate: stub, selection: {})
             stub.controller = cellController
-            return CellController(UUID(), dataSource: cellController)
+            return CellController(id: UUID(), dataSource: cellController)
         }
         display(cells)
     }
