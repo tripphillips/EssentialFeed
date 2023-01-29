@@ -160,7 +160,7 @@ extension DispatchQueue {
             }
             
             // The main queue is quaranteed to be running on the main thread
-            // THe main thread is not guaranteed to be running on the main queue
+            // The main thread is not guaranteed to be running on the main queue
             
             action()
         }
