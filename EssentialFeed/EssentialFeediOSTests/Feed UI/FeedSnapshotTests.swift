@@ -30,6 +30,25 @@ final class FeedSnapshotTests: XCTestCase {
         assert(snapshot: sut.snapshot(for: .iPhone8(style: .dark)), named: "FEED_WITH_FAILED_IMAGE_LOADING_dark")
     }
     
+    func test_feedWithLoadMoreIndicator() {
+        let sut = makeSUT()
+        
+        sut.display(feedWithLoadMoreIndicator())
+        
+        assert(snapshot: sut.snapshot(for: .iPhone8(style: .light)), named: "FEED_WITH_LOAD_MORE_INDICATOR_light")
+        assert(snapshot: sut.snapshot(for: .iPhone8(style: .dark)), named: "FEED_WITH_LOAD_MORE_INDICATOR_dark")
+    }
+    
+    func test_feedWithLoadMoreError() {
+        let sut = makeSUT()
+        
+        sut.display(feedWithLoadMoreError())
+        
+        assert(snapshot: sut.snapshot(for: .iPhone8(style: .light)), named: "FEED_WITH_LOAD_MORE_Error_light")
+        assert(snapshot: sut.snapshot(for: .iPhone8(style: .dark)), named: "FEED_WITH_LOAD_MORE_Error_dark")
+        assert(snapshot: sut.snapshot(for: .iPhone8(style: .dark, contentSize: .extraExtraExtraLarge)), named: "FEED_WITH_LOAD_MORE_ERROR_dark_extraExtraExtraLarge")
+    }
+    
     // MARK: - Helpers
     
     private func makeSUT() -> ListViewController {
@@ -51,7 +70,7 @@ final class FeedSnapshotTests: XCTestCase {
             ),
             ImageStub(
                 description: "This is an image of the color green. This color reminds me of green grass",
-                location: "Denver, CO",
+                location: "Boulder, CO",
                 image: UIImage.make(withColor: .green)
             )
         ]
@@ -66,9 +85,32 @@ final class FeedSnapshotTests: XCTestCase {
             ),
             ImageStub(
                 description: nil,
-                location: "Denver, CO",
+                location: "Boulder, CO",
                 image: nil
             )
+        ]
+    }
+    
+    private func feedWithLoadMoreIndicator() -> [CellController] {
+        let loadMore = LoadMoreCellController(callback: {})
+        loadMore.display(ResourceLoadingViewModel(isLoading: true))
+        return feed(with: loadMore)
+    }
+    
+    private func feedWithLoadMoreError() -> [CellController] {
+        let loadMore = LoadMoreCellController(callback: {})
+        loadMore.display(ResourceErrorViewModel(message: "This is a error multiline\nerror message"))
+        return feed(with: loadMore)
+    }
+    
+    private func feed(with loadMore: LoadMoreCellController) -> [CellController] {
+        let stub = feedWithContent().last!
+        let cellController = FeedImageCellController(viewModel: stub.viewModel, delegate: stub, selection: {})
+        stub.controller = cellController
+        
+        return [
+            CellController(id: UUID(), dataSource: cellController),
+            CellController(id: UUID(), dataSource: loadMore)
         ]
     }
 }
@@ -78,7 +120,7 @@ private extension ListViewController {
         let cells: [CellController] = stubs.map { stub in
             let cellController = FeedImageCellController(viewModel: stub.viewModel, delegate: stub, selection: {})
             stub.controller = cellController
-            return CellController(UUID(), dataSource: cellController)
+            return CellController(id: UUID(), dataSource: cellController)
         }
         display(cells)
     }
