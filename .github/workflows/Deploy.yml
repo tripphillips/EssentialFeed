@@ -40,8 +40,8 @@ jobs:
 
     - name: Set build number
       run: |
-      buildNumber=$(($GITHUB_RUN_NUMBER + 1))
-      /usr/libexec/PlistBuddy -c "Set :CFBundleVersion $buildNumber" "EssentialFeed/EssentialApp/EssentialApp/Info.plist"
+        buildNumber=$(($GITHUB_RUN_NUMBER + 1))
+        /usr/libexec/PlistBuddy -c "Set :CFBundleVersion $buildNumber" "EssentialFeed/EssentialApp/EssentialApp/Info.plist"
 
     - name: Build
       run: xcodebuild clean archive -sdk iphoneos -workspace EssentialFeed/EssentialFeed/EssentialFeed.xcworkspace -configuration "Release" -scheme "EssentialApp" -derivedDataPath "DerivedData" -archivePath "DerivedData/Archive/EssentialApp.xcarchive"
