@@ -1,8 +1,8 @@
 # Essential Feed App – Image Feed Feature
 
-[![Build Status](![example workflow](https://github.com/github/docs/actions/workflows/deploy.yml/badge.svg))
-[![Build Status](![example workflow](https://github.com/github/docs/actions/workflows/CI-iOS.yml/badge.svg))
-[![Build Status](![example workflow](https://github.com/github/docs/actions/workflows/CI-MacOS.yml/badge.svg))
+[![deploy](![example workflow](https://github.com/tripphillips/EssentialFeed/actions/workflows/deploy.yml/badge.svg))
+[![CI-iOS](![example workflow](https://github.com/tripphillips/EssentialFeed/actions/workflows/CI-iOS.yml/badge.svg))
+[![CI-macOS](![example workflow](https://github.com/tripphillips/EssentialFeed/actions/workflows/CI-macOS.yml/badge.svg))
 
 
 ## BDD Specs
