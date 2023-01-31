@@ -40,8 +40,7 @@ jobs:
 
     - name: Set build number
       run: |
-        buildNumber=$(($GITHUB_RUN_NUMBER + 3))
-        echo "CFBundleVersion - $buildNumber"
+        buildNumber=$((3))
         /usr/libexec/PlistBuddy -c "Set :CFBundleVersion $buildNumber" "EssentialFeed/EssentialApp/EssentialApp/Info.plist"
 
     - name: Build
