@@ -10,7 +10,6 @@ import EssentialFeediOS
 @testable import EssentialFeed
 
 final class FeedSnapshotTests: XCTestCase {
-    
     func test_feedWithContent() {
         let sut = makeSUT()
         
