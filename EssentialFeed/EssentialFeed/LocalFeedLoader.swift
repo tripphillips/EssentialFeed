@@ -16,15 +16,11 @@ public final class LocalFeedLoader {
         self.currentDate = currentDate
     }
 }
-    
-extension LocalFeedLoader: FeedCache {
-    public typealias SaveResult = FeedCache.Result
-    
-    public func save(_ feed: [FeedImage], completion: @escaping (SaveResult) -> ()) {
-        completion(SaveResult {
-            try store.deleteCachedFeed()
-            try store.insert(feed.toLocal(), timestamp: currentDate())
-        })
+
+extension LocalFeedLoader: FeedCache { 
+    public func save(_ feed: [FeedImage]) throws {
+        try store.deleteCachedFeed()
+        try store.insert(feed.toLocal(), timestamp: currentDate())
     }
 }
 
